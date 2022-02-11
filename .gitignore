@@ -1,7 +1,12 @@
 node_modules
-.DS_Store
-dist-ssr
-*.local
+# dir
 .idea
 .cache
 .temp
+docs/.vuepress/dist
+
+#file
+yarn.lock
+.DS_Store
+dist-ssr
+*.local

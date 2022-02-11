@@ -9,12 +9,9 @@ export default defineUserConfig({
     '/': {
       lang: 'zh-CN',
       description: '一行html代码的高级table组件'
-    },
-    // '/en/': {
-    //   lang: 'en',
-    // }
+    }
   },
-  extendsMarkdown: md => {
+  extendsMarkdown: (md) => {
     md.use(markdownItTaskLists);
   },
   themeConfig: {
