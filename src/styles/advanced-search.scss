@@ -1,0 +1,34 @@
+.table-view__header-advanced-search {
+  .el-form {
+    width: 100%;
+    padding: 8px;
+
+    .dropdown {
+      transition: all 0.2s;
+    }
+
+    &.expanded {
+      .search-form__wrapper {
+        height: fit-content;
+      }
+
+      .dropdown {
+        transform: rotate(180deg);
+      }
+    }
+
+    &.collapsed {
+      .search-form__wrapper {
+        height: 40px;
+      }
+    }
+
+    .search-form__wrapper {
+      transition: all 0.2s;
+    }
+
+    .search-button__wrapper {
+      text-align: right;
+    }
+  }
+}
