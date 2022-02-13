@@ -6,6 +6,7 @@ export default defineConfig({
   title: 'vue-table-view',
   description: 'An one line html code advance table component',
   lang: 'zh-CN',
+  base: '/vue-table-view/',
   markdown: {
     extendMarkdown: md => {
       md.use(markdownItTaskLists)
