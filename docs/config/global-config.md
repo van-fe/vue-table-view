@@ -18,10 +18,10 @@ Vue.use(VueTableView, defineVueTableViewGlobalOption({
 ## language
 - 可以设置全局语言
 - 类型: `number`
-- 默认: 0
+- 默认: `0`
 - 可选:
-  - 0: 中文
-  - 1: 英文
+  - `0`: 中文
+  - `1`: 英文
 
 ## searchButtonText
 - 搜索按钮的文字

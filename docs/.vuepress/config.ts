@@ -1,94 +1,95 @@
-import { defineUserConfig } from 'vuepress';
+import { defineConfig } from 'vuepress/config'
 // @ts-ignore
 import markdownItTaskLists from 'markdown-it-task-lists';
 
-export default defineUserConfig({
+export default defineConfig({
   title: 'vue-table-view',
   description: 'An one line html code advance table component',
-  locales: {
-    '/': {
-      lang: 'zh-CN',
-      description: '一行html代码的高级table组件'
+  lang: 'zh-CN',
+  markdown: {
+    extendMarkdown: md => {
+      md.use(markdownItTaskLists)
     }
-  },
-  extendsMarkdown: (md) => {
-    md.use(markdownItTaskLists);
   },
   themeConfig: {
     locales: {
       '/': {
-        selectLanguageName: '中文'
+        selectText: '语言',
+        label: '中文'
       },
       '/en/': {
-        selectLanguageName: 'English'
+        selectText: 'Language',
+        label: 'English'
       }
     },
     repo: 'van-fe/vue-table-view',
     sidebar: [
       {
-        text: '开始',
+        title: '开始',
+        collapsable: false,
         children: [
           {
-            text: '介绍',
-            link: '/'
+            title: '介绍',
+            path: '/'
           },
           {
-            text: '快速使用',
-            link: '/start/how-to-use'
+            title: '快速使用',
+            path: '/start/how-to-use'
           },
           {
-            text: '依赖',
-            link: '/start/dependence'
+            title: '依赖',
+            path: '/start/dependence'
           },
           {
-            text: '适用人群',
-            link: '/start/suit-for'
+            title: '适用人群',
+            path: '/start/suit-for'
           },
           {
-            text: '未来支持',
-            link: '/start/will-support'
+            title: '未来支持',
+            path: '/start/will-support'
           }
         ]
       },
       // {
-      //   text: '使用',
+      //   title: '使用',
       //   children: [
       //     {
-      //       text: '高级搜索',
-      //       link: '/use/advance-search'
+      //       title: '高级搜索',
+      //       path: '/use/advance-search'
       //     }, {
-      //       text: '工具栏',
-      //       link: '/use/tools-bar'
+      //       title: '工具栏',
+      //       path: '/use/tools-bar'
       //     }, {
-      //       text: '数据展示',
-      //       link: '/use/data-view'
+      //       title: '数据展示',
+      //       path: '/use/data-view'
       //     }, {
-      //       text: '分页',
-      //       link: '/use/pagination'
+      //       title: '分页',
+      //       path: '/use/pagination'
       //     }, {
-      //       text: '创建/修改弹框',
-      //       link: '/use/create-edit-dialog'
+      //       title: '创建/修改弹框',
+      //       path: '/use/create-edit-dialog'
       //     }
       //   ]
       // },
       {
-        text: '配置',
+        title: '配置',
+        collapsable: false,
         children: [
           {
-            text: '全局配置',
-            link: '/config/global-config'
+            title: '全局配置',
+            path: '/config/global-config'
           }, {
-            text: '组件配置',
-            link: '/config/component-config'
+            title: '组件配置',
+            path: '/config/component-config'
           }, {
-            text: '操作栏配置',
-            link: '/config/operation-config'
+            title: '操作栏配置',
+            path: '/config/operation-config'
           }, {
-            text: '列配置',
-            link: '/config/column-config'
+            title: '列配置',
+            path: '/config/column-config'
           }, {
-            text: '高级搜索配置',
-            link: '/config/advanced-search-config'
+            title: '高级搜索配置',
+            path: '/config/advanced-search-config'
           }
         ]
       }

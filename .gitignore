@@ -10,3 +10,5 @@ yarn.lock
 .DS_Store
 dist-ssr
 *.local
+.pnpm-debug.log
+pnpm-lock.yaml
