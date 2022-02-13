@@ -1,5 +1,3 @@
-# 列配置
-
 ## type
 - 当前列类型
 - 类型: `enum ColumnType`

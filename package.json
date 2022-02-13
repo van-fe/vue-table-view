@@ -57,6 +57,7 @@
     "vue-eslint-parser": "^8.2.0",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^2.8.1",
-    "vuepress": "^1.9.7"
+    "vuepress": "^1.9.7",
+    "vuepress-theme-reco": "^1.6.11"
   }
 }

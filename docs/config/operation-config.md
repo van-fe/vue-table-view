@@ -1,5 +1,3 @@
-# 操作栏配置
-
 ## operations
 - 操作列，可以对全局所有的表格增加操作
 - 类型: `interface Operation[]`
