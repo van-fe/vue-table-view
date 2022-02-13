@@ -1,24 +1,15 @@
 # vue-table-view
-[English](https://github.com/vanCreator/vue-table-view/blob/main/README.md) [中文](https://github.com/vanCreator/vue-table-view/blob/main/readme/README-ZH.md)
-
 [Github](https://github.com/vanCreator/vue-table-view)
 [Npm](https://www.npmjs.com/package/vue-table-view)
 
+One line HTML and rich config to build an advanced table component. In order to release FE from repeated template writing work.
 
-A less HTML code needed table component with vue. In order to release FE from repeated template writing work.
+More info please see [Document](https://van-fe.github.io/vue-table-view/)
 
 ## Current percentage
 [================....] 80%
 
 > ☑️ Reach to 80% to publish
-
-## Will support in future
-- [ ] export data in `.csv`
-- [ ] build-in create / edit dialog
-- [ ] tree / lazy load tree
-- [ ] advanced search support: tree, ...
-- [ ] more language setting support
-- [ ] column filtered options data store in local / server
 
 ## Suit for
 - FE.
