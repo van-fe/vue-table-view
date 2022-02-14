@@ -12,5 +12,5 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TARGET_BRANCH: master
-          BUILD_SCRIPT: pnpm i && pnpm run docs:build
+          BUILD_SCRIPT: yarn && yarn run docs:build
           BUILD_DIR: docs/.vuepress/dist/
