@@ -4,7 +4,7 @@
 
 全局配置只需要在 `Vue.use` 时，通过第二个参数传入即可。
 
-可以借用辅助函数 `defineVueTableViewGlobalOption` 让 IDE 可以智能提示。
+可以借用辅助函数 `defineVueTableViewGlobalOption` 让 IDE 智能提示。
 
 ```ts
 // main.ts

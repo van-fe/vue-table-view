@@ -7,7 +7,6 @@ export default defineConfig({
   description: 'An one line html code advance table component',
   lang: 'zh-CN',
   base: '/vue-table-view/',
-  theme: 'reco',
   markdown: {
     extendMarkdown: md => {
       md.use(markdownItTaskLists)
