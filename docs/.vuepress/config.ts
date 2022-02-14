@@ -36,7 +36,7 @@ export default defineConfig({
             path: '/'
           },
           {
-            title: '快速使用',
+            title: '如何使用',
             path: '/start/how-to-use'
           },
           {

@@ -1,3 +1,5 @@
+# 组件配置
+
 组件配置的数据会覆盖 [全局配置](global-config.md) 的配置
 
 ## height
