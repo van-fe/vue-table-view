@@ -25,9 +25,8 @@ export declare enum AvailableLanguage {
     ZhCn = 0,
     En = 1
 }
-export declare type Dictionary<T = any> = {
-    [key: string]: T;
-};
+export declare type Dictionary<T = any> = Record<string, T>;
+export declare type Records<T = any> = Record<string, T>[];
 export interface CheckboxChangedRecords<T> {
     records: T[];
     row: T;

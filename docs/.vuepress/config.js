@@ -1,8 +1,6 @@
-import { defineConfig } from 'vuepress/config'
-// @ts-ignore
-import markdownItTaskLists from 'markdown-it-task-lists';
+const markdownItTaskLists = require('markdown-it-task-lists');
 
-export default defineConfig({
+module.exports = {
   title: 'vue-table-view',
   description: 'An one line html code advance table component',
   lang: 'zh-CN',
@@ -13,7 +11,6 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    modePicker: true,
     locales: {
       '/': {
         selectText: '语言',
@@ -24,7 +21,16 @@ export default defineConfig({
         label: 'English'
       }
     },
+    nav: [
+      { text: '指南', link: '/' },
+      { text: '使用', link: '/use/advance-search' },
+      { text: '配置', link: '/config/global-config' },
+      { text: '演示', link: 'https://van-fe.github.io/vue-table-view-preview/' },
+    ],
     repo: 'van-fe/vue-table-view',
+    '/zh/': {
+      sidebar: 'auto'
+    },
     sidebar: [
       {
         title: '开始',
@@ -68,9 +74,9 @@ export default defineConfig({
           }, {
             title: '分页',
             path: '/use/pagination'
-          // }, {
-          //   title: '创建/修改弹框',
-          //   path: '/use/create-edit-dialog'
+            // }, {
+            //   title: '创建/修改弹框',
+            //   path: '/use/create-edit-dialog'
           }
         ]
       },
@@ -98,4 +104,4 @@ export default defineConfig({
       }
     ]
   }
-})
+}

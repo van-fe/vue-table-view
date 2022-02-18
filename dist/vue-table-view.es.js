@@ -79847,6 +79847,9 @@ class GlobalConfig {
   }
 }
 const globalConfig = new GlobalConfig();
+function defineVueTableViewGlobalOption(option2) {
+  return option2;
+}
 class SearchHelper {
   constructor(config2, paginationInfo) {
     __publicField(this, "config");
@@ -80008,4 +80011,4 @@ TableView.install = (_, option2) => {
   (option2 == null ? void 0 : option2.language) && locale$1(option2.language);
   Vue.component("table-view ", TableView);
 };
-export { Align, AvailableLanguage, BaseFormType, ColumnType, Fixed, FormItemComponent, FormItemComponents, OperationType, Operations, TableView, TableViewAdvancedSearch, TableViewBody, TableViewFooter, TableViewHeader, TableView as default };
+export { Align, AvailableLanguage, BaseFormType, ColumnType, Fixed, FormItemComponent, FormItemComponents, OperationType, Operations, SearchHelper, TableView, TableViewAdvancedSearch, TableViewBody, TableViewFooter, TableViewHeader, TableView as default, defineVueTableViewGlobalOption, globalConfig };

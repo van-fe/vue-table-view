@@ -1,2 +1,2 @@
-export * from "./globalConfig";
-export * from "./install";
+export * from "./GlobalConfig";
+export * from "./SearchHelper";
