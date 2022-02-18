@@ -1,5 +1,5 @@
 # vue-table-view
-[Github](https://github.com/vanCreator/vue-table-view)
+[Github](https://github.com/van-fe/vue-table-view)
 [Npm](https://www.npmjs.com/package/vue-table-view)
 
 One line HTML and rich config to build an advanced table component. In order to release FE from repeated template writing work.
