@@ -1,13 +1,13 @@
 import { Component, Prop, ProvideReactive } from "vue-property-decorator";
-import type { Config, Dictionary, PaginationData } from "@/config";
+import type { Config, Dictionary, PaginationData, Records } from "@/config";
 import Vue from "vue";
 import { TableViewHeader, TableViewBody, TableViewFooter } from "@/components";
-import { globalConfig } from "@/utils";
+import { globalConfig, SearchHelper } from "@/utils";
 import { merge } from "lodash-es";
 
 @Component
 export default class TableViewMixin<
-  Row,
+  Row extends Records,
   Search extends Dictionary
 > extends Vue {
   declare $refs: Vue["$refs"] & {
@@ -29,6 +29,9 @@ export default class TableViewMixin<
   protected dataList: Row[] = [];
 
   @ProvideReactive()
+  protected searchHelperInstance!: SearchHelper<Row, Search>;
+
+  @ProvideReactive()
   protected paginationInfo: PaginationData = {
     currentPage: 1,
     perPage: 10,
@@ -48,6 +51,11 @@ export default class TableViewMixin<
       (this.currentConfig.requestPageConfig?.pageSizes &&
         this.currentConfig.requestPageConfig?.pageSizes[0]) ||
       10;
+
+    this.searchHelperInstance = new SearchHelper<Row, Search>(
+      this.currentConfig,
+      this.paginationInfo
+    );
   }
 
   async mounted(): Promise<void> {
@@ -67,7 +75,7 @@ export default class TableViewMixin<
       throw new SyntaxError("The config => getListFunc is not a function");
     } else {
       const res = await this.currentConfig.getListFunc(
-        this.$refs.header.$refs.advancedSearch.mergeRequestParams() as Search
+        this.searchHelperInstance.mergeRequestParams() as Search
       );
 
       this.dataList = res[this.currentConfig.receivePageConfig!.list] as Row[];

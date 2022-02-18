@@ -79324,7 +79324,7 @@ const FormItemComponents = {
   CascaderForm,
   RemoteSearchForm
 };
-var _dec$4, _dec2$3, _dec3$2, _dec4$1, _dec5$1, _dec6, _dec7, _dec8, _dec9, _class$4, _class2$4, _descriptor$3, _descriptor2$2, _descriptor3, _descriptor4, _descriptor5;
+var _dec$4, _dec2$3, _dec3$2, _dec4$1, _dec5$1, _dec6$1, _dec7, _dec8, _dec9, _class$4, _class2$4, _descriptor$3, _descriptor2$2, _descriptor3$1, _descriptor4, _descriptor5;
 function _initializerDefineProperty$3(target2, property2, descriptor2, context) {
   if (!descriptor2)
     return;
@@ -79372,7 +79372,7 @@ let FormItemComponent = (_dec$4 = Component({
 }), _dec5$1 = Prop({
   type: Boolean,
   default: false
-}), _dec6 = Prop({
+}), _dec6$1 = Prop({
   type: Boolean,
   default: false
 }), _dec7 = Watch("value", {
@@ -79382,7 +79382,7 @@ let FormItemComponent = (_dec$4 = Component({
     super(...args);
     _initializerDefineProperty$3(this, "info", _descriptor$3, this);
     _initializerDefineProperty$3(this, "data", _descriptor2$2, this);
-    _initializerDefineProperty$3(this, "value", _descriptor3, this);
+    _initializerDefineProperty$3(this, "value", _descriptor3$1, this);
     _initializerDefineProperty$3(this, "isQuickView", _descriptor4, this);
     _initializerDefineProperty$3(this, "required", _descriptor5, this);
     this.currentValue = null;
@@ -79466,7 +79466,7 @@ let FormItemComponent = (_dec$4 = Component({
   enumerable: true,
   writable: true,
   initializer: null
-}), _descriptor3 = _applyDecoratedDescriptor$3(_class2$4.prototype, "value", [_dec4$1], {
+}), _descriptor3$1 = _applyDecoratedDescriptor$3(_class2$4.prototype, "value", [_dec4$1], {
   configurable: true,
   enumerable: true,
   writable: true,
@@ -79476,13 +79476,13 @@ let FormItemComponent = (_dec$4 = Component({
   enumerable: true,
   writable: true,
   initializer: null
-}), _descriptor5 = _applyDecoratedDescriptor$3(_class2$4.prototype, "required", [_dec6], {
+}), _descriptor5 = _applyDecoratedDescriptor$3(_class2$4.prototype, "required", [_dec6$1], {
   configurable: true,
   enumerable: true,
   writable: true,
   initializer: null
 }), _applyDecoratedDescriptor$3(_class2$4.prototype, "onValueChange", [_dec7], Object.getOwnPropertyDescriptor(_class2$4.prototype, "onValueChange"), _class2$4.prototype), _applyDecoratedDescriptor$3(_class2$4.prototype, "onCurrentValueChange", [_dec8, _dec9], Object.getOwnPropertyDescriptor(_class2$4.prototype, "onCurrentValueChange"), _class2$4.prototype), _class2$4)) || _class$4);
-var _dec$3, _dec2$2, _dec3$1, _dec4, _dec5, _class$3, _class2$3, _descriptor$2, _descriptor2$1;
+var _dec$3, _dec2$2, _dec3$1, _dec4, _dec5, _dec6, _class$3, _class2$3, _descriptor$2, _descriptor2$1, _descriptor3;
 function _initializerDefineProperty$2(target2, property2, descriptor2, context) {
   if (!descriptor2)
     return;
@@ -79519,20 +79519,20 @@ let TableViewAdvancedSearch = (_dec$3 = Component({
     "el-form": elementUi_common.exports.Form,
     FormItem: FormItemComponent
   }
-}), _dec2$2 = InjectReactive(), _dec3$1 = InjectReactive(), _dec4 = Emit("do-search"), _dec5 = Emit("do-reset"), _dec$3(_class$3 = (_class2$3 = class TableViewAdvancedSearch2 extends Vue {
+}), _dec2$2 = InjectReactive(), _dec3$1 = InjectReactive(), _dec4 = InjectReactive(), _dec5 = Emit("do-search"), _dec6 = Emit("do-reset"), _dec$3(_class$3 = (_class2$3 = class TableViewAdvancedSearch2 extends Vue {
   constructor(...args) {
     super(...args);
     _initializerDefineProperty$2(this, "currentConfig", _descriptor$2, this);
     _initializerDefineProperty$2(this, "paginationInfo", _descriptor2$1, this);
-    this.defaultRequestParams = {};
-    this.search = {};
+    _initializerDefineProperty$2(this, "searchHelperInstance", _descriptor3, this);
     this.isExpand = false;
+  }
+  get search() {
+    return this.searchHelperInstance.search;
   }
   created() {
     var _a;
     this.isExpand = !((_a = this.currentConfig.advancedSearchNeedExpand) != null ? _a : true);
-    this.createDefaultRequestParams();
-    this.$set(this, "search", this.mergeRequestParams(false));
   }
   render() {
     var _a, _b, _c;
@@ -79625,22 +79625,6 @@ let TableViewAdvancedSearch = (_dec$3 = Component({
       }
     }, [...nodes]));
   }
-  createDefaultRequestParams() {
-    var _a;
-    if (Object.keys(this.defaultRequestParams).length === 0) {
-      (_a = this.currentConfig.advancedSearch) == null ? void 0 : _a.forEach((item) => {
-        this.$set(this.defaultRequestParams, item.field, item.default);
-      });
-    }
-  }
-  mergeRequestParams(withPageInfo = true) {
-    const search = cloneDeep(this.defaultRequestParams);
-    if (withPageInfo) {
-      search[this.currentConfig.requestPageConfig.perPage] = this.paginationInfo.perPage;
-      search[this.currentConfig.requestPageConfig.currentPage] = this.paginationInfo.currentPage;
-    }
-    return __spreadValues(__spreadValues({}, search), this.search);
-  }
   doExpand() {
     this.isExpand = !this.isExpand;
   }
@@ -79649,7 +79633,7 @@ let TableViewAdvancedSearch = (_dec$3 = Component({
     return this.search;
   }
   doReset() {
-    this.search = cloneDeep(this.defaultRequestParams);
+    this.searchHelperInstance.reset();
     if (this.currentConfig.getListAfterReset) {
       this.$emit("do-search", this.search);
     }
@@ -79665,7 +79649,12 @@ let TableViewAdvancedSearch = (_dec$3 = Component({
   enumerable: true,
   writable: true,
   initializer: null
-}), _applyDecoratedDescriptor$2(_class2$3.prototype, "doSearch", [_dec4], Object.getOwnPropertyDescriptor(_class2$3.prototype, "doSearch"), _class2$3.prototype), _applyDecoratedDescriptor$2(_class2$3.prototype, "doReset", [_dec5], Object.getOwnPropertyDescriptor(_class2$3.prototype, "doReset"), _class2$3.prototype), _class2$3)) || _class$3);
+}), _descriptor3 = _applyDecoratedDescriptor$2(_class2$3.prototype, "searchHelperInstance", [_dec4], {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  initializer: null
+}), _applyDecoratedDescriptor$2(_class2$3.prototype, "doSearch", [_dec5], Object.getOwnPropertyDescriptor(_class2$3.prototype, "doSearch"), _class2$3.prototype), _applyDecoratedDescriptor$2(_class2$3.prototype, "doReset", [_dec6], Object.getOwnPropertyDescriptor(_class2$3.prototype, "doReset"), _class2$3.prototype), _class2$3)) || _class$3);
 var _dec$2, _dec2$1, _class$2, _class2$2, _descriptor$1;
 function _initializerDefineProperty$1(target2, property2, descriptor2, context) {
   if (!descriptor2)
@@ -79704,6 +79693,9 @@ let TableViewHeader = (_dec$2 = Component({
     super(...args);
     _initializerDefineProperty$1(this, "currentConfig", _descriptor$1, this);
   }
+  get showToolsBar() {
+    return !!this.$slots.toolsBar;
+  }
   render() {
     const h = arguments[0];
     return h("div", {
@@ -79715,8 +79707,12 @@ let TableViewHeader = (_dec$2 = Component({
         "do-reset": () => this.$emit("do-reset")
       }
     }), h("div", {
+      "directives": [{
+        name: "show",
+        value: this.showToolsBar
+      }],
       "class": "table-view__header-toolbar"
-    })]);
+    }, [this.$slots.toolsBar])]);
   }
 }, _descriptor$1 = _applyDecoratedDescriptor$1(_class2$2.prototype, "currentConfig", [_dec2$1], {
   configurable: true,
@@ -79851,6 +79847,37 @@ class GlobalConfig {
   }
 }
 const globalConfig = new GlobalConfig();
+class SearchHelper {
+  constructor(config2, paginationInfo) {
+    __publicField(this, "config");
+    __publicField(this, "paginationInfo");
+    __publicField(this, "search");
+    __publicField(this, "defaultRequestParams", {});
+    this.config = config2;
+    this.paginationInfo = paginationInfo;
+    this.createDefaultRequestParams();
+    this.search = this.mergeRequestParams(false);
+  }
+  createDefaultRequestParams() {
+    var _a;
+    if (Object.keys(this.defaultRequestParams).length === 0) {
+      (_a = this.config.advancedSearch) == null ? void 0 : _a.forEach((item) => {
+        this.defaultRequestParams[item.field] = item.default;
+      });
+    }
+  }
+  mergeRequestParams(withPageInfo = true) {
+    const search = cloneDeep(this.defaultRequestParams);
+    if (withPageInfo) {
+      search[this.config.requestPageConfig.perPage] = this.paginationInfo.perPage;
+      search[this.config.requestPageConfig.currentPage] = this.paginationInfo.currentPage;
+    }
+    return __spreadValues(__spreadValues({}, search), this.search);
+  }
+  reset() {
+    this.search = cloneDeep(this.defaultRequestParams);
+  }
+}
 var __defProp2 = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __decorateClass = (decorators, target2, key, kind) => {
@@ -79868,6 +79895,7 @@ let TableViewMixin = class extends Vue {
     __publicField(this, "config");
     __publicField(this, "currentConfig", {});
     __publicField(this, "dataList", []);
+    __publicField(this, "searchHelperInstance");
     __publicField(this, "paginationInfo", {
       currentPage: 1,
       perPage: 10,
@@ -79880,6 +79908,7 @@ let TableViewMixin = class extends Vue {
     var _a, _b;
     this.$set(this, "currentConfig", merge$1({}, globalConfig.globalConfig, this.config));
     this.paginationInfo.perPage = ((_a = this.currentConfig.requestPageConfig) == null ? void 0 : _a.pageSizes) && ((_b = this.currentConfig.requestPageConfig) == null ? void 0 : _b.pageSizes[0]) || 10;
+    this.searchHelperInstance = new SearchHelper(this.currentConfig, this.paginationInfo);
   }
   async mounted() {
     if (this.currentConfig.getListAtCreated !== false) {
@@ -79895,7 +79924,7 @@ let TableViewMixin = class extends Vue {
     if (typeof this.currentConfig.getListFunc !== "function") {
       throw new SyntaxError("The config => getListFunc is not a function");
     } else {
-      const res = await this.currentConfig.getListFunc(this.$refs.header.$refs.advancedSearch.mergeRequestParams());
+      const res = await this.currentConfig.getListFunc(this.searchHelperInstance.mergeRequestParams());
       this.dataList = res[this.currentConfig.receivePageConfig.list];
       ((_a = this.currentConfig.receivePageConfig) == null ? void 0 : _a.currentPage) && (this.paginationInfo.currentPage = res[this.currentConfig.receivePageConfig.currentPage]);
       ((_b = this.currentConfig.receivePageConfig) == null ? void 0 : _b.perPage) && (this.paginationInfo.perPage = res[this.currentConfig.receivePageConfig.perPage]);
@@ -79937,6 +79966,9 @@ __decorateClass([
 ], TableViewMixin.prototype, "dataList", 2);
 __decorateClass([
   ProvideReactive()
+], TableViewMixin.prototype, "searchHelperInstance", 2);
+__decorateClass([
+  ProvideReactive()
 ], TableViewMixin.prototype, "paginationInfo", 2);
 TableViewMixin = __decorateClass([
   Component
@@ -79962,7 +79994,9 @@ let TableView = (_dec = Component({
       "on": {
         "do-search": this.getList
       }
-    }), h("table-view-body", {
+    }, [h("template", {
+      "slot": "toolsBar"
+    }, [this.$slots.toolsBar])]), h("table-view-body", {
       "ref": "body"
     }), h("table-view-footer", {
       "ref": "footer"

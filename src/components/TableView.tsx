@@ -23,7 +23,9 @@ export class TableView extends mixins(TableViewMixin) {
         class="table-view"
         style={{ height: this.currentConfig.height ?? "100%" }}
       >
-        <table-view-header ref="header" on-do-search={this.getList} />
+        <table-view-header ref="header" on-do-search={this.getList}>
+          <template slot="toolsBar">{this.$slots.toolsBar}</template>
+        </table-view-header>
         <table-view-body ref="body" />
         <table-view-footer ref="footer" />
       </div>

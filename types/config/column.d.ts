@@ -13,8 +13,8 @@ export declare type ColumnRender<Row> = (h: CreateElement, curr: any, row: Row) 
 export declare type ColumnClassNameCallback = (params: ColumnCellRenderParams) => string;
 export interface Column<Row> {
     type?: ColumnType;
-    field: keyof Row;
-    title: string;
+    field?: keyof Row & string;
+    title?: string;
     titleAlign?: Align;
     align?: Align;
     tooltipText?: string;

@@ -1,6 +1,6 @@
 {
   "name": "vue-table-view",
-  "version": "0.1.0-beta.3",
+  "version": "0.1.0-beta.4",
   "description": "One line html's advance vue table component",
   "license": "MIT",
   "private": false,
@@ -9,8 +9,10 @@
   "types": "./types/index.d.ts",
   "scripts": {
     "build": "npm run build:types && npm run build:js",
+    "build:watch": "npm run build:types && npm run build:js-watch",
     "build:types": "rm -rf types && tsc -d --emitDeclarationOnly --declarationDir ./types",
     "build:js": "vite build",
+    "build:js-watch": "vite build --watch",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },

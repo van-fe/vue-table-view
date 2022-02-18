@@ -1,13 +1,14 @@
-# 使用
-> 只需三步:
+# 如何使用
 
-## 1.安装
+> 只需三步
+
+## 1. 安装
 
 ```bash
 pnpm add vue-table-view
 ```
 
-## 2.全局注册
+## 2. 全局注册
 
 ```ts
 // main.ts
@@ -21,7 +22,7 @@ Vue.use(VueTableView, defineVueTableViewGlobalOption({
 
 `options` 请参考 [全局配置](/config/global-config.html)
 
-## 3.组件内使用
+## 3. 组件内使用
 
 ```vue
 <!--YourComponent.vue-->

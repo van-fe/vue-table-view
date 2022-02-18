@@ -52,27 +52,28 @@ export default defineConfig({
           }
         ]
       },
-      // {
-      //   title: '使用',
-      //   children: [
-      //     {
-      //       title: '高级搜索',
-      //       path: '/use/advance-search'
-      //     }, {
-      //       title: '工具栏',
-      //       path: '/use/tools-bar'
-      //     }, {
-      //       title: '数据展示',
-      //       path: '/use/data-view'
-      //     }, {
-      //       title: '分页',
-      //       path: '/use/pagination'
-      //     }, {
-      //       title: '创建/修改弹框',
-      //       path: '/use/create-edit-dialog'
-      //     }
-      //   ]
-      // },
+      {
+        title: '使用',
+        collapsable: false,
+        children: [
+          {
+            title: '高级搜索',
+            path: '/use/advance-search'
+          }, {
+            title: '工具栏',
+            path: '/use/tools-bar'
+          }, {
+            title: '数据展示',
+            path: '/use/data-view'
+          }, {
+            title: '分页',
+            path: '/use/pagination'
+          // }, {
+          //   title: '创建/修改弹框',
+          //   path: '/use/create-edit-dialog'
+          }
+        ]
+      },
       {
         title: '配置',
         collapsable: false,

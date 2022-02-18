@@ -24,8 +24,8 @@ export type ColumnClassNameCallback = (
 
 export interface Column<Row> {
   type?: ColumnType; // default
-  field: keyof Row;
-  title: string;
+  field?: keyof Row & string;
+  title?: string;
   titleAlign?: Align;
   align?: Align;
   tooltipText?: string;

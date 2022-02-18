@@ -9,20 +9,6 @@
 #### 1. type
 - 类型
 - 类型: `enum OperationType`
-- 参考: [OperationType](https://github.com/van-fe/vue-table-view/blob/main/src/config/operation.ts#L1)
-
-```ts
-enum OperationType {
-  Button, // 按钮
-  ButtonWithIcon, // 有icon的按钮
-  Link, // 链接
-  LinkWithoutUnderline, // 没有下划线的链接
-  ButtonMore, // 按钮形式的 更多
-  ButtonWithIconMore, // 按钮形式有icon的 更多
-  LinkMore, // 链接形式的 更多
-  LinkWithoutUnderlineMore, // 没有下划线的链接形式的 更多
-}
-```
 
 #### 2. status
 - 按钮/链接的状态，会直接以 `prop` 传入组件

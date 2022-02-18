@@ -1,5 +1,5 @@
 import { Component, InjectReactive, Vue } from "vue-property-decorator";
-import type { Config, Dictionary } from "@/config";
+import type { Config, Dictionary, Records } from "@/config";
 import type { VNode } from "vue";
 import { TableViewAdvancedSearch } from "@/components";
 
@@ -8,12 +8,19 @@ import { TableViewAdvancedSearch } from "@/components";
     TableViewAdvancedSearch,
   },
 })
-export class TableViewHeader<Row, Search extends Dictionary> extends Vue {
+export class TableViewHeader<
+  Row extends Records,
+  Search extends Dictionary
+> extends Vue {
   declare $refs: Vue["$refs"] & {
     advancedSearch: TableViewAdvancedSearch<Row, Search>;
   };
 
   @InjectReactive() currentConfig!: Config<Row, Search>;
+
+  public get showToolsBar(): boolean {
+    return !!this.$slots.toolsBar;
+  }
 
   public render(): VNode {
     return (
@@ -25,7 +32,9 @@ export class TableViewHeader<Row, Search extends Dictionary> extends Vue {
             on-do-reset={() => this.$emit("do-reset")}
           />
         )}
-        <div class="table-view__header-toolbar" />
+        <div v-show={this.showToolsBar} class="table-view__header-toolbar">
+          {this.$slots.toolsBar}
+        </div>
       </div>
     );
   }

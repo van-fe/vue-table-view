@@ -1,9 +1,9 @@
 import { Component, Emit, InjectReactive, Vue } from "vue-property-decorator";
-import type { Config, Dictionary, PaginationData } from "@/config";
+import type { Config, Dictionary, PaginationData, Records } from "@/config";
 import type { VNode } from "vue";
 import { Button, Col, Form, Row as ElRow } from "element-ui";
 import FormItem from "../form/FormItem/FormItemComponent";
-import { cloneDeep } from "lodash-es";
+import { SearchHelper } from "@/utils";
 
 @Component({
   components: {
@@ -15,20 +15,21 @@ import { cloneDeep } from "lodash-es";
   },
 })
 export class TableViewAdvancedSearch<
-  Row,
+  Row extends Records,
   Search extends Dictionary
 > extends Vue {
   @InjectReactive() currentConfig!: Config<Row, Search>;
   @InjectReactive() paginationInfo!: PaginationData;
+  @InjectReactive() searchHelperInstance!: SearchHelper<Row, Search>;
 
-  public defaultRequestParams: Dictionary = {};
-  public search: Dictionary = {};
   public isExpand = false;
+
+  public get search(): Search {
+    return this.searchHelperInstance.search;
+  }
 
   public created(): void {
     this.isExpand = !(this.currentConfig.advancedSearchNeedExpand ?? true);
-    this.createDefaultRequestParams();
-    this.$set(this, "search", this.mergeRequestParams(false));
   }
 
   public render(): VNode {
@@ -89,7 +90,7 @@ export class TableViewAdvancedSearch<
               info={item}
               data={this.search}
               label-col={item.labelWidth ?? "auto"}
-              on-input={(val: unknown) => (this.search[item.field] = val)}
+              on-input={(val: any) => (this.search[item.field] = val)}
             />
           </el-col>
         );
@@ -101,27 +102,6 @@ export class TableViewAdvancedSearch<
     return chunks.map((nodes: VNode[]) => (
       <el-row gutter={10}>{...nodes}</el-row>
     ));
-  }
-
-  private createDefaultRequestParams(): void {
-    if (Object.keys(this.defaultRequestParams).length === 0) {
-      this.currentConfig.advancedSearch?.forEach((item) => {
-        this.$set(this.defaultRequestParams, item.field, item.default);
-      });
-    }
-  }
-
-  public mergeRequestParams(withPageInfo = true): Dictionary {
-    const search: Dictionary = cloneDeep(this.defaultRequestParams);
-
-    if (withPageInfo) {
-      search[this.currentConfig.requestPageConfig!.perPage] =
-        this.paginationInfo.perPage;
-      search[this.currentConfig.requestPageConfig!.currentPage] =
-        this.paginationInfo.currentPage;
-    }
-
-    return { ...search, ...this.search };
   }
 
   public doExpand(): void {
@@ -136,7 +116,7 @@ export class TableViewAdvancedSearch<
 
   @Emit("do-reset")
   public doReset(): boolean {
-    this.search = cloneDeep(this.defaultRequestParams);
+    this.searchHelperInstance.reset();
     if (this.currentConfig.getListAfterReset) {
       this.$emit("do-search", this.search);
     }

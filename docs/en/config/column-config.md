@@ -4,7 +4,7 @@
 - 当前列类型
 - 类型: `enum ColumnType`
 - 默认: `ColumnType.Default`
-- 参见: [地址](https://github.com/van-fe/vue-table-view/blob/main/src/config/column.ts#L5)
+- 参见: [地址]()
 
 ## field
 - 此列对应数据的字段
@@ -19,13 +19,13 @@
 - 标题文字对齐方式
 - 类型: `enum Align`
 - 默认: `Align.Left`
-- 参见: [地址](https://github.com/van-fe/vue-table-view/blob/main/src/config/common.ts#L1)
+- 参见: [地址]()
 
 ## align
 - 单元格内容对齐方式
 - 类型: `enum Align`
 - 默认: `Align.Left`
-- 参见: [地址](https://github.com/van-fe/vue-table-view/blob/main/src/config/common.ts#L1)
+- 参见: [地址]()
 
 ## width
 - 宽度，可以使带有百分号的字符串
