@@ -1,2 +1,2 @@
-# 创建/修改弹框
-暂未完成
+# create/edit dialog
+Not finish yet.

@@ -1,161 +1,161 @@
-# 组件配置
+# Component config
 
-组件配置的数据会覆盖 [全局配置](global-config.md) 的配置
+Component configuration data will overrides the [global configuration](global-config.md)
 
 ## height
-- 整体表格高度
-- 类型: `number | string`
-- 默认: `'auto'`
+- The table view's height (the wrapper component's height)
+- Type: `number | string`
+- Default: `'auto'`
 
 ## needPagination
-- 是否需要分页显示
-- 类型: `boolean`
-- 默认: `true`
+- Whether pagination display is required
+- Type: `boolean`
+- Default: `true`
 
 ## searchButtonText
-- 搜索按钮的文字
-- 类型: `string`
-- 默认: `'搜索'`
+- Search button's text
+- Type: `string`
+- Default: `'Search'`
 
 ## resetSearchButtonText
-- 重置搜索按钮文字
-- 类型: `string`
-- 默认: `'重置'`
+- Reset button's text
+- Type: `string`
+- Default: `'Reset'`
 
 ## expandButtonText
-- 展开按钮（或Link) 的文字
-- 类型: `string`
-- 默认: `'展开'`
+- Expand button's text
+- Type: `string`
+- Default: `'Expand'`
 
 ## advancedSearchNeedExpanded
-- 当打开页面时，是否允许默认展开
-- 类型: `boolean`
-- 默认: `false`
+- Whether to allow the search to be performed immediately after clicking reset button
+- Type: `boolean`
+- Default: `false`
 
 ## emptyText
-- 当没有数据时展示的文字
-- 类型: `string`
-- 默认: `'暂无数据'`
+- The text when empty data to display
+- Type: `string`
+- Default: `'No Data'`
 
 ## requestPageConfig
-- 请求时的分页参数设置
-- 类型: `interface RequestPageFieldConfig`
+- Whether to allow expanded automatically when the page is opened
+- Type: `interface RequestPageFieldConfig`
 
-### 参数
+### Params
 
 #### 1. currentPage
-- 请求时当前页数对应字段
-- 类型: `string`
-- 默认: `'pageNum'`
+- The current page number corresponds to the field when requested
+- Type: `string`
+- Default: `'pageNum'`
 
 #### 2. perPage
-- 请求时每页数量对应字段
-- 类型: `string`
-- 默认: `'pageSize'`
+- The pre page amount corresponds to the field when requested
+- Type: `string`
+- Default: `'pageSize'`
 
 #### 3. pageSizes
-- 每页可选数量的设置
-- 类型: `number[]`
-- 默认: `[10, 20, 30, 40, 50, 100]`
+- Optional number of Settings per page
+- Type: `number[]`
+- Default: `[10, 20, 30, 40, 50, 100]`
 
 ## receivePageConfig
-- 得到数据时的分页参数设置
-- 类型: `interface ReceivePageFieldConfig`
+- Paging parameter Settings when data is retrieved
+- Type: `interface ReceivePageFieldConfig`
 
-### 参数
+### Params
 
 #### 1. currentPage
-- 返回时当前页数对应字段
-- 类型: `string`
-- 默认: `'pageNum'`
+- The current page number corresponds to the field when respond
+- Type: `string`
+- Default: `'pageNum'`
 
 #### 2. perPage
-- 返回时每页数量对应字段
-- 类型: `string`
-- 默认: `'pageSize'`
+- The pre page amount corresponds to the field when respond
+- Type: `string`
+- Default: `'pageSize'`
 
 #### 3. currentPageSize
-- 返回时当前页数量对应字段
-- 类型: `string`
-- 默认: `'size'`
+- The current page's data size corresponds to the field when respond
+- Type: `string`
+- Default: `'size'`
 
 #### 4. total
-- 返回时总条目对应字段
-- 类型: `string`
-- 默认: `'total'`
+- The total data amount corresponds to the field when respond
+- Type: `string`
+- Default: `'total'`
 
 #### 5. pages
-- 返回时总页数对应字段
-- 类型: `string`
-- 默认: `'pages'`
+- The total pages amount corresponds to the field when respond
+- Type: `string`
+- Default: `'pages'`
 
 #### 6. list
-- 返回数据时对应的字段
-- 类型: `string`
-- 默认: `'list'`
+- The data set corresponds to the field when respond
+- Type: `string`
+- Default: `'list'`
 
 ## operationConfig
-- 操作栏设置
-- 类型: `interface OperationConfig[]`
+- Operation config
+- Type: `interface OperationConfig[]`
 
-配置项较多，具体请参考 [操作栏配置](operation-config.md)
+There are many configuration items. For details, see [Operation column config](operation-config.md).
 
 ## needCheckbox
-- 是否需要 checkbox
-- 类型: `boolean`
-- 默认: `false`
+- Whether to need checkbox
+- Type: `boolean`
+- Default: `false`
 
 ## needRadio
-- 是否需要 radio
-- 类型: `boolean`
-- 默认: `false`
+- Whether to need radio
+- Type: `boolean`
+- Default: `false`
 
 ## needSeq
-- 是否需要 seq，每页都会以 `1` 开始
-- 类型: `boolean`
-- 默认: `false`
+- Whether to need seq. Each page will begin with `1`
+- Type: `boolean`
+- Default: `false`
 
 ## onRadioChange
-- 当单选被勾选的事件回调（使用时注意 `this` 指向，最好直接设置为一个 `method`）
-- 类型: `(row: Row) => void`
-- 默认: `undefined`
+- Event callback when radio is ticked（Attention the `this`'s reference）
+- Type: `(row: Row) => void`
+- Default: `undefined`
 
 ## onCheckboxChange
-- 当多选框被勾选的事件回调（使用时注意 `this` 指向，最好直接设置为一个 `method`）
-- 类型: `(records: CheckboxChangedRecords<Row>) => void;`
-- 默认: `undefined`
+- Event callback when checkbox is ticked（Attention the `this`'s reference）
+- Type: `(records: CheckboxChangedRecords<Row>) => void;`
+- Default: `undefined`
 
 ## getListAfterReset
-- 是否允许在点击重置后立刻执行搜索
-- 类型: `boolean`
-- 默认: `true`
+- Whether to allow the search to be performed immediately after clicking reset button
+- Type: `boolean`
+- Default: `true`
 
 ## getListAtCreated
-- 是否当创建时立刻请求数据，如果你的搜索依赖其他异步请求参数，请设置为 `false`
-- 类型: `boolean`
-- 默认: `true`
+- Whether to request data immediately when created, or set to `false` if your search relies on other asynchronous request parameters. Then you can call search function by yourself
+- Type: `boolean`
+- Default: `true`
 
 ## getListFunc
-- 获取数据的 `function`
-- 必选: 是
-- 类型: `(search: Search) => Promise<ListDataWrapper<Row>>`
+- The `function` that gets data
+- Required: `Yes`
+- Type: `(search: Search) => Promise<ListDataWrapper<Row>>`
 
 ## useOperations
-- 是否显示操作栏。在某些情况下，可能因为权限或页面来源而对显隐操作
-- 类型: `boolean`
-- 默认: `true`
+- Whether to display the operation column. In some cases, explicit actions may be performed because of permissions or page origin
+- Type: `boolean`
+- Default: `true`
 
 ## columns
-- 列配置
-- 类型: `interface Column[]`
-- 默认: `[]`
+- Column config
+- Type: `interface Column[]`
+- Default: `[]`
 
-配置项较多，具体请参考 [列配置](column-config.md)
+There are many configuration items. For details, see [Column config](column-config.md)
 
 ## advancedSearch
-- 高级搜索配置
-- 类型: `interface AdvancedSearch[]`
-- 默认: `[]`
+- Advanced Search config
+- Type: `interface AdvancedSearch[]`
+- Default: `[]`
 
-配置项较多，具体请参考 [高级搜索配置](advanced-search-config.md)
+There are many configuration items. For details, see [Advanced Search](advanced-search-config.md)
 

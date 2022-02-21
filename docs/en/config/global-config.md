@@ -1,10 +1,10 @@
-# 全局配置
+# Global config
 
-为了方便使用者不需要在使用每个 `vue-table-view` 时都重复定义一些与后端工程相关的配置（例如分页的设定），所以提供了全局配置。
+Global configuration is provided so that the user does not need to repeatedly define some back-end engineering related configurations (such as paging Settings) with each `vue-table-view`.
 
-全局配置只需要在 `Vue.use` 时，通过第二个参数传入即可。
+The global configuration only needs to be passed in as the second parameter in `Vue.use`.
 
-可以借用辅助函数 `defineVueTableViewGlobalOption` 让 IDE 智能提示。
+You can use auxiliary function `defineVueTableViewGlobalOption` to enable IDE's smart tips.
 
 ```ts
 // main.ts
@@ -17,59 +17,59 @@ Vue.use(VueTableView, defineVueTableViewGlobalOption({
 ```
 
 ## language
-- 可以设置全局语言
-- 类型: `number`
-- 默认: `0`
-- 可选:
-  - `0`: 中文
-  - `1`: 英文
+- You can set global language
+- type: `number`
+- Default: `0`
+- Available:
+  - `0`: Chinese
+  - `1`: English
 
 ## searchButtonText
-- 搜索按钮的文字
-- 类型: `string`
-- 默认: `'搜索'`
+- Search button's text
+- Type: `string`
+- Default: `'Search'`
 
 ## resetSearchButtonText
-- 重置搜索按钮文字
-- 类型: `string`
-- 默认: `'重置'`
+- Reset button's text
+- Type: `string`
+- Default: `'Reset'`
 
 ## expandButtonText
-- 展开按钮（或Link) 的文字
-- 类型: `string`
-- 默认: `'展开'`
+- Expand button's text
+- Type: `string`
+- Default: `'Expand'`
 
 ## getListAfterReset
-- 是否允许在点击重置后立刻执行搜索
-- 类型: `boolean`
-- 默认: `true`
+- Whether to allow the search to be performed immediately after clicking reset button
+- Type: `boolean`
+- Default: `true`
 
 ## advancedSearchNeedExpanded
-- 当打开页面时，是否允许默认展开
-- 类型: `boolean`
-- 默认: `false`
+- Whether to allow expanded automatically when the page is opened
+- Type: `boolean`
+- Default: `false`
 
 ## emptyText
-- 当没有数据时展示的文字
-- 类型: `string`
-- 默认: `'暂无数据'`
+- The text when empty data to display
+- Type: `string`
+- Default: `'No Data'`
 
 ## requestPageConfig
-- 请求时的分页参数设置
-- 类型: `RequestPageFieldConfig`
+- Pagination parameter Settings at request
+- Type: `RequestPageFieldConfig`
 
-具体请参见 [组件配置 requestPageConfig](component-config.md#requestpageconfig)
+Same as [Component config requestPageConfig](component-config.md#requestpageconfig)
 
 ## receivePageConfig
-- 得到数据时的分页参数设置
-- 类型: `ReceivePageFieldConfig`
+- Pagination parameter Settings at receive
+- Type: `ReceivePageFieldConfig`
 
-具体请参见 [组件配置 receivePageConfig](component-config.md#receivepageconfig)
+Same as [Component config receivePageConfig](component-config.md#receivepageconfig)
 
 ## operationConfig
-- 操作栏设置
-- 类型: `OperationConfig[]`
-- 说明: 允许在全局配置中定义 `operationConfig`，主要是为了可以设定一个共有的操作按钮，这个会在某些情况下适用。
+- Operation column config
+- Type: `OperationConfig[]`
+- Desc: It is allowed to define `operationConfig` in the global configuration, mainly to set a common operation button. This will be applicable in some cases.
 
-具体参数请见 [组件配置 operationConfig](component-config.md#operationconfig)
+Same as [Component config operationConfig](component-config.md#operationconfig)
 

@@ -6,8 +6,15 @@
 
 ## 1. 安装
 
-```bash
+```shell
+# pnpm
 pnpm add vue-table-view
+
+# npm
+npm i vue-table-view
+
+# yarn
+yarn add vue-table-view
 ```
 
 ## 2. 全局注册
@@ -22,7 +29,7 @@ Vue.use(VueTableView, defineVueTableViewGlobalOption({
 }));
 ```
 
-`options` 请参考 [全局配置](/config/global-config.html)
+`options` 请参考 [全局配置](../config/global-config.md)
 
 ## 3. 组件内使用
 
@@ -50,5 +57,5 @@ export default {
 </script>
 ```
 
-`config` 请参考 [组件配置](/config/component-config.html)
+`config` 请参考 [组件配置](../config/component-config.md)
 

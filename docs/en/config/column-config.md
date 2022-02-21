@@ -1,85 +1,85 @@
-# 列配置
+# Column config
 
 ## type
-- 当前列类型
-- 类型: `enum ColumnType`
-- 默认: `ColumnType.Default`
-- 参见: [地址]()
+- Current column type
+- Type: `enum ColumnType`
+- Default: `ColumnType.Default`
+- Reference: [Link](https://github.com/van-fe/vue-table-view/blob/main/src/config/column.ts#L5)
 
 ## field
-- 此列对应数据的字段
-- 类型: `string`
-- 默认: `undefined`
+- The field of the data that corresponds to this column
+- Type: `string`
+- Default: `undefined`
 
 ## title
-- 此列的标题
-- 类型: `string`
+- The title of this column
+- Type: `string`
 
 ## titleAlign
-- 标题文字对齐方式
-- 类型: `enum Align`
-- 默认: `Align.Left`
-- 参见: [地址]()
+- Title text alignment
+- Type: `enum Align`
+- Default: `Align.Left`
+- Reference: [Link](https://github.com/van-fe/vue-table-view/blob/main/src/config/common.ts#L1)
 
 ## align
-- 单元格内容对齐方式
-- 类型: `enum Align`
-- 默认: `Align.Left`
-- 参见: [地址]()
+- Alignment of cell content
+- Type: `enum Align`
+- Default: `Align.Left`
+- Reference: [Link](https://github.com/van-fe/vue-table-view/blob/main/src/config/common.ts#L1)
 
 ## width
-- 宽度，可以使带有百分号的字符串
-- 类型: `string | number`
-- 默认: `'auto'`
+- The width. Can be a string with a percent sign
+- Type: `string | number`
+- Default: `'auto'`
 
 ## minWidth
-- 最小宽度（建议使用），可以使带有百分号的字符串
-- 类型: `string | number`
-- 默认: `'auto'`
+- Min-width (`recommended`). Can be a string with a percent sign
+- Type: `string | number`
+- Default: `'auto'`
 
 ## fixed
-- 是否固定或固定设定，如果为 `true` 则即 `'left'`
-- 类型: `enum Fixed`
+- Whether to fixed or fixed set. If `true` then `'left'`
+- Type: `enum Fixed`
 
 ## ~~sortable~~
-- 是否可排序(暂不支持)
-- 类型: `boolean`
-- 默认: `false`
+- Whether to be sortable (Not support yet)
+- Type: `boolean`
+- Default: `false`
 
 ## resizable
-- 是否可调整列宽
-- 类型: `boolean`
-- 默认: `true`
+- Whether the column width can be adjusted
+- Type: `boolean`
+- Default: `true`
 
 ## showOverflow
-- 当内容过长时显示为省略号
-- 类型: `boolean`
-- 默认: `true`
+- Ellipsis is displayed when the content is too long
+- Type: `boolean`
+- Default: `true`
 
 ## showHeaderOverflow
-- 当表头内容过长时显示为省略号
-- 类型: `boolean`
-- 默认: `true`
+- Ellipsis is displayed when the header is too long
+- Type: `boolean`
+- Default: `true`
 
 ## className
-- 给单元格附加 className
-- 类型: `string | () => string`
-- 默认: `''`
+- Append `className` to the cell
+- Type: `string | () => string`
+- Default: `''`
 
 ## headerClassName
-- 给表头单元格附加 className
-- 类型: `string | () => string`
-- 默认: `''`
+- Append `className` to the table header cell
+- Type: `string | () => string`
+- Default: `''`
 
 ## ~~alwaysShow~~
-- 是否始终显示（对于列过滤时的处理）(暂不支持)
-- 类型: `boolean`
-- 默认: `false`
+- Whether display always (for column filtering) (not supported yet)
+- Type: `boolean`
+- Default: `false`
 
 ## format
-- 格式化显示内容
-- 类型: `(curr: unknown, row: Row) => string`
+- Formatting display content
+- Type: `(curr: unknown, row: Row) => string`
 
 ## render
-- 渲染，第一个参数即 `vue 渲染函数`，如果直接返回 `jsx`，防止直接在 `config` 中定义，其也必须声明
-- 类型: `(h: CreateElement, value: any, row: Row) => VNode;`
+- Render. The first argument is 'vue render function'
+- Type: `(h: CreateElement, value: any, row: Row) => VNode;`

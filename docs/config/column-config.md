@@ -81,5 +81,5 @@
 - 类型: `(curr: unknown, row: Row) => string`
 
 ## render
-- 渲染，第一个参数即 `vue 渲染函数`，如果直接返回 `jsx`，防止直接在 `config` 中定义，其也必须声明
+- 渲染，第一个参数即 `vue 渲染函数`
 - 类型: `(h: CreateElement, value: any, row: Row) => VNode;`

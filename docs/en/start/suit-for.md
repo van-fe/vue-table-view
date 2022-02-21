@@ -1,5 +1,5 @@
-# 适用人群
+# Suit for
 
-`vue-table-view` 主要适合：
-1. `FE` 或 `BE` 做中后台页面
-2. 制作低代码数据聚合平台（因为绝大多数的内容展示都只需要靠 `json` 即可达成）
+`vue-table-view` mainly suit for：
+1. `FE` or `BE` to provide middle-backend website
+2. Low code data aggregation platform (Because mostly data content display only need json data to set)

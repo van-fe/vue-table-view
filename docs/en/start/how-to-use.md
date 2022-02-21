@@ -1,14 +1,25 @@
-# 如何使用
+# How to sue
 
-> 只需三步
+:::tip
+Only 3 steps
+:::
 
-## 1. 安装
+## 1. Install
 
-```bash
+```shell
+# pnpm
 pnpm add vue-table-view
+
+# npm
+npm i vue-table-view
+
+# yarn
+yarn add vue-table-view
 ```
 
-## 2. 全局注册
+
+
+## 2. Global register
 
 ```ts
 // main.ts
@@ -20,9 +31,8 @@ Vue.use(VueTableView, defineVueTableViewGlobalOption({
 }));
 ```
 
-`options` 请参考 [全局配置](/config/global-config.html)
-
-## 3. 组件内使用
+Please visit [Global config](../config/global-config.md) to get `options`'s config.
+## 3. Usage in component
 
 ```vue
 <!--YourComponent.vue-->
@@ -48,5 +58,5 @@ export default {
 </script>
 ```
 
-`config` 请参考 [组件配置](/config/component-config.html)
+Please visit [Component config](../config/component-config.md) to get `options`'s config.
 

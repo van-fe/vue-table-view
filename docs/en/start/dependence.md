@@ -1,5 +1,5 @@
-# 依赖
+# Dependence
 
--`vue2` ( `vue3`还在开发中 )
+- `vue2` ( `vue3` is on working)
 - `element-ui`
 - `vxe-table`

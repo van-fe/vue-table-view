@@ -1,19 +1,33 @@
-# 操作栏配置
+# Operation config
 
 ## operations
-- 操作列，可以对全局所有的表格增加操作
-- 类型: `interface Operation[]`
-- 默认: `[]`
+- Operation column
+- Type: `interface Operation[]`
+- Default: `[]`
 
-### 参数
+### Params
 #### 1. type
-- 类型
-- 类型: `enum OperationType`
+- Operation's type
+- Type: `enum OperationType`
+- See: [OperationType](https://github.com/van-fe/vue-table-view/blob/main/src/config/operation.ts#L1)
+
+```ts
+enum OperationType {
+  Button,
+  ButtonWithIcon,
+  Link,
+  LinkWithoutUnderline,
+  ButtonMore,
+  ButtonWithIconMore,
+  LinkMore,
+  LinkWithoutUnderlineMore,
+}
+```
 
 #### 2. status
-- 按钮/链接的状态，会直接以 `prop` 传入组件
-- 类型: `string`
-- 可选值:
+- The status of the button/link. It will pass directly to the component as `prop`
+- Type: `string`
+- Available:
     - `'primary'`
     - `'success'`
     - `'info'`
@@ -21,53 +35,53 @@
     - `'danger'`
 
 #### 3. hoverToShowText
-- 鼠标悬浮式展示的文字
-- 类型: `string`
+- The text when mouse hover
+- Type: `string`
 
 #### 4. disabled
-- 是否禁用
-- 类型: `(row: Row) => boolean`
+- Whether to disable
+- Type: `(row: Row) => boolean`
 
 #### 5. disappear
-- 是否显示
-- 类型: `(row: Row) => boolean`
+- Whether to disappear
+- Type: `(row: Row) => boolean`
 
 #### 6. onClick
-- 点击事件回调
-- 类型: `(row: Row) => void`
+- Click event's callback
+- Type: `(row: Row) => void`
 
 #### 7. label
-- 当使用 **除** `ButtonWithIcon` | `ButtonWithIconMore` 时内部文字内容
-- 类型: `string`
+- The text inside when use **without** `ButtonWithIcon` | `ButtonWithIconMore`
+- Type: `string`
 
 #### 8. icon
-- 当使用 `ButtonWithIcon` | `ButtonWithIconMore` 时的 `icon`，会传入 `el-button` 的 `icon` 中
-- 类型: `string`
+- When you use `ButtonWithIcon` | `ButtonWithIconMore`'s `icon`. It will pass to `el-button`'s `icon` prop
+- Type: `string`
 
 #### 9. divided
-- 这个是在使用 更多类型 的时候，对 `dropMenu` 的 `divided` 参数的处理
-- 类型: `boolean`
+- When you use `More`, processing of the parameter `divided` of `dropMenu`
+- Type: `boolean`
 
 #### 10. children
-- 这个是在使用 `更多类型` 的时候，**但注意的是，目前不支持多级菜单**
-- 类型: `interface Operation[]`
+- When you use `More` to provide multiple action，**Note: multi-level menus are not supported yet**
+- Type: `interface Operation[]`
 
 ## headerTitle
-- 操作列标题名称
-- 类型: `string`
-- 默认: `'Operator'`
+- Operation column's header title
+- Type: `string`
+- Default: `'Operator'`
 
 ## width
-- 操作列宽度
-- 类型: `string | number`
-- 默认: `'auto'`
+- Operation column's width
+- Type: `string | number`
+- Default: `'auto'`
 
 ## minWidth
-- 操作列最小宽度（建议）
-- 类型: `string | number`
-- 默认: `'auto'`
+- Operation column's min width (`recommended`)
+- Type: `string | number`
+- Default: `'auto'`
 
 ## surroundByButtonGroup
-- 操作列内容是否使用 `<el-button-group>` 包裹，对于所有的 `operations` 都是 `button | button-with-icon` 类型时显示比较友好
-- 类型: `boolean`
-- 默认: `false`
+- Whether to use `<el-button-group>` pack all components inside the column. For all `operations` are `button | button-with-icon` type showed more friendly
+- Type: `boolean`
+- Default: `false`

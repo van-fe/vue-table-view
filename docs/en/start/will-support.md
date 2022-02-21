@@ -1,11 +1,11 @@
-# 未来支持
+# Will support
 
-- [x] 本文档使用网站来展示
-- [ ] 增加预览
-- [ ] 以 `.csv` 格式导出数据
-- [ ] 内置的新增/修改弹窗
-- [ ] 树 与 懒加载树
-- [ ] 高级搜索支持: 树, ...
-- [ ] 增加英语支持
-- [ ] 列过滤选项存储在本机或服务器中
+- [x] use doc website to show document
+- [x] add preview
+- [ ] export data in '. CSV 'format
+- [ ] build-in create/edit dialog
+- [ ] tree and lazy load tree
+- [ ] advanced search support: tree and so on
+- [x] provide English document
+- [ ] column display filter stored in local or web server
 

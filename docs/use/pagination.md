@@ -28,7 +28,7 @@ Vue.use(VueTableView, defineVueTableViewGlobalOption({
 
 **响应** 分页字段的具体配置说明请见 [这里](../config/component-config.md#receivepageconfig)
 
-## 配置视图字段
+## 配置组件字段
 因为对于前端工程来讲，可能会同时接入多个不同的后端API，所以 `vue-table-view` 允许开发者在不同视图中配置不同的分页处理字段
 
 :::tip 

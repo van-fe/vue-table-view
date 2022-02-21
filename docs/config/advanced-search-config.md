@@ -199,3 +199,4 @@
 #### rangeSeparator
 - 区间选择分割符
 - 类型: `string`
+- 默认: `'-'`
