@@ -32,7 +32,7 @@ Vue.use(VueTableView, defineVueTableViewGlobalOption({
 ```
 
 Please visit [Global config](../config/global-config.md) to get `options`'s config.
-## 3. Usage in component
+## 3. Usa in component
 
 ```vue
 <!--YourComponent.vue-->
