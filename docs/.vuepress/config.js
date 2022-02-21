@@ -25,7 +25,7 @@ module.exports = {
       { text: '指南', link: '/' },
       { text: '使用', link: '/use/advance-search' },
       { text: '配置', link: '/config/global-config' },
-      { text: '演示', link: 'https://van-fe.github.io/vue-table-view-preview/' },
+      { text: '演示', link: 'https://vue-table-view-preview.microrice.vip/' },
     ],
     repo: 'van-fe/vue-table-view',
     '/zh/': {
