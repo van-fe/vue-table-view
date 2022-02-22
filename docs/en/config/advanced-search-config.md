@@ -172,12 +172,12 @@ Reference: [advancedSearch.ts](https://github.com/van-fe/vue-table-view/blob/mai
 #### format
 - Format the date/time
 - Type: `string`
-- 参见: [链接](https://element.eleme.cn/#/en-US/component/date-picker#date-formats)
+- Reference: [Link](https://element.eleme.cn/#/en-US/component/date-picker#date-formats)
 
 #### pickerOptions
 - Each selector's own special configuration
 - Type: `object`
-- 参见: 
+- Reference: 
   - [`date-picker`](https://element.eleme.cn/#/en-US/component/date-picker#picker-options)
   - [`time-picker`](https://element.eleme.cn/#/en-US/component/time-picker#time-picker-options)
   - [`date-time-picker`](https://element.eleme.cn/#/en-US/component/datetime-picker#picker-options)
