@@ -1,12 +1,20 @@
 {
   "name": "vue-table-view",
-  "version": "0.1.0-beta.7",
+  "version": "0.1.0-beta.8",
   "description": "One line html's advance vue table component",
   "license": "MIT",
   "private": false,
   "main": "./dist/vue-table-view.umd.js",
   "module": "./dist/vue-table-view.es.js",
   "types": "./types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/van-fe/vue-table-view.git"
+  },
+  "bugs": {
+    "url": "https://github.com/van-fe/vue-table-view/issues"
+  },
+  "homepage": "https://van-fe.github.io/vue-table-view/",
   "scripts": {
     "build": "npm run build:types && npm run build:js",
     "build:watch": "npm run build:types && npm run build:js-watch",
